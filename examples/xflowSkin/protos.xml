@@ -26,8 +26,11 @@
 
             boneXform = xflow.mul(bindPose, pose);
 
-            normal = xflow.skinDirection(normal, boneIdx, boneWeight, boneXform);
-            position = xflow.skinPosition(position, boneIdx, boneWeight, boneXform);
+            <!--normal = xflow.skinDirection(normal, boneIdx, boneWeight, boneXform);
+            position = xflow.skinPosition(position, boneIdx, boneWeight, boneXform);-->
+
+            normal = xflow.skinDirectionSimd(normal, boneIdx, boneWeight, boneXform);
+            position = xflow.skinPositionSimd(position, boneIdx, boneWeight, boneXform);
         </compute>
     </dataflow>
   
